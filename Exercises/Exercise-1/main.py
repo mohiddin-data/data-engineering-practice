@@ -1,4 +1,4 @@
-import requests
+import requests,os
 
 download_uris = [
     'https://divvy-tripdata.s3.amazonaws.com/Divvy_Trips_2018_Q4.zip',
@@ -12,6 +12,12 @@ download_uris = [
 
 
 def main():
+    path = './downloads'
+    isExist = os.path.exists(path)
+    if not isExist:
+        # Create a new directory because it does not exist
+        os.makedirs(path)
+        print("The new directory is created!")
     # your code here
     pass
 
